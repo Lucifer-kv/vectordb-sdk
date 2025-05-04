@@ -13,7 +13,7 @@ pip install vectordb-sdk
 Alternatively, if you have the source code:
 
 ```bash
-git clone git clone https://github.com/bluesky0724/vectordb-sdk.git
+git clone https://github.com/Lucifer-kv/vectordb-sdk.git
 cd vectordb-sdk
 pip install -r requirements.txt
 ```
