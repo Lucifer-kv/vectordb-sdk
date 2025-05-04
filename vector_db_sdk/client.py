@@ -10,12 +10,10 @@ class VectorDBClient:
     def _request(self, method: str, endpoint: str, data: dict = None, params: dict = None, headers: dict = None):
         url = f"{self.base_url}{endpoint}"
         headers = headers or {"accept": "application/json", "Content-Type": "application/json"}
-        print(f"Request: {method} {url}, Params: {params}, Headers: {headers}, Data: {data}")  # Debug
         try:
             response = requests.request(method, url, json=data, params=params, headers=headers)
             response.raise_for_status()
             response_data = response.json() if response.content else {}
-            print(f"Response: {response.status_code}, Headers: {response.headers}, Data: {response_data}")  # Debug
             return response_data
         except requests.exceptions.HTTPError as e:
             error_detail = response.json() if response.content else str(e)
